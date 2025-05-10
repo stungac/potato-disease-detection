@@ -57,3 +57,44 @@ potato-disease-detection/
 |   ├── train_models.ipynb # Jupyter notebook for training and evaluation
 ├── README.md # Project documentation
 └── requirements.txt # Required Python libraries
+
+## ⚙️ Installation
+
+To run the project on your local machine:
+
+1. Clone this repository:  
+```bash
+   git clone https://github.com/stungac/potato-disease-detection.git  
+   cd potato-disease-detection  
+```
+
+2. Create and activate a virtual environment:  
+```bash
+   python -m venv env  
+   On Linux/Mac: source env/bin/activate  
+   On Windows: env\Scripts\activate  
+```
+
+3. Install the required Python libraries:  
+```bash
+   pip install -r requirements.txt  
+```
+
+4. Run the app script:  
+```bash
+   python src/main.py 
+```
+
+## Sample Results
+
+![alt text](image.png)  ![alt text](image-1.png)
+
+## Contribution
+
+Contributions are welcome! If you find bugs or have suggestions, feel free to open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+---
