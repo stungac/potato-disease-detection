@@ -5,14 +5,14 @@ import tensorflow as tf
 import json
 
 def preprocess_image():
-    """Görseli modele uygun hale getir"""
+    """Preprocess the image for prediction"""
     global img_data
     img_array = np.array(img_data) / 255.0
     img_array = np.expand_dims(img_array, axis=0)
     return img_array
 
 def display_prediction(predictions):
-    """Tahmin sonucunu ekranda göster"""
+    """Display the predicted class and probability"""
     global result_label
     top_index = np.argmax(predictions)
     predicted_class = list(class_indices.keys())[top_index].replace('_', ' ')
@@ -20,32 +20,32 @@ def display_prediction(predictions):
     result_label.config(text=f"Tahmin: {predicted_class}\nOlasılık: %{probability*100:.4f}")
 
 def predict_image():
-    """Görselin ait olduğu sınıfı tahmin et"""
+    """Predict the class of the image and display the result"""
     preprocessed_img = preprocess_image()
     predictions = model.predict(preprocessed_img)
     display_prediction(predictions)
-    exeButton.config(text="Görsel Yükle", command=open_file)
+    exeButton.config(text="Load the plant image", command=open_file)
 
 def load_image(path):
-    """Görseli hem model hem Tkinter için yükle"""
+    """Upload image for both model and Tkinter"""
     global img_data
     img_data = Image.open(path).convert('RGB').resize((224, 224))
     img_display = ImageTk.PhotoImage(img_data)
     return img_display
 
 def open_file():
-    """Kullanıcıdan görsel seçmesini iste ve ekranda göster"""
+    """Ask the user to select an image and display it on the screen"""
     global img_label, img_display, result_label
     result_label.config(text="")
     file_path = filedialog.askopenfilename(
-        title="Bir görsel seçin",
+        title="Choose an Image",
         filetypes=[("Image files", "*.jpg *.jpeg *.png")]
     )
     if file_path:
         img_display = load_image(file_path)
         img_label.config(image=img_display)
         img_label.image = img_display  # Tkinter'da garbage collection'a karşı koruma
-        exeButton.config(text="Görseli Analiz Et", command=predict_image)
+        exeButton.config(text="Analize the Image", command=predict_image)
 
 # Modelve sınıflar
 model = tf.keras.models.load_model('../model/resnet_potato_disease_model.h5')
@@ -73,7 +73,7 @@ img_label.pack()
 # Buton
 exeButton = Button(
     root,
-    text="Görsel Yükle",
+    text="Choose an Image",
     command=open_file,
     width=20,
     height=2,
