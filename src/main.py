@@ -17,7 +17,7 @@ def display_prediction(predictions):
     top_index = np.argmax(predictions)
     predicted_class = list(class_indices.keys())[top_index].replace('_', ' ')
     probability = predictions[0][top_index]
-    result_label.config(text=f"Tahmin: {predicted_class}\nOlasılık: %{probability*100:.4f}")
+    result_label.config(text=f"Class: {predicted_class}\nProbability: %{probability*100:.4f}")
 
 def predict_image():
     """Predict the class of the image and display the result"""
@@ -45,7 +45,7 @@ def open_file():
         img_display = load_image(file_path)
         img_label.config(image=img_display)
         img_label.image = img_display  # Tkinter'da garbage collection'a karşı koruma
-        exeButton.config(text="Analize the Image", command=predict_image)
+        exeButton.config(text="Analize the Leaf", command=predict_image)
 
 # Modelve sınıflar
 model = tf.keras.models.load_model('../model/resnet_potato_disease_model.h5')
