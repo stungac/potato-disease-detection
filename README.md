@@ -45,18 +45,21 @@ The following table shows the accuracy values for each model on each class.
 > 🧪 **Note:** The values represent test set accuracy after model training and evaluation.
 
 ## 🏗️ Project Structure
+
+```
 potato-disease-detection/
 │
-├── data/ # Original dataset downloaded from Kaggle
-|   ├── pdd.png # Used in GUI
-├── notebooks/ # Jupyter notebooks for training and evaluation
-├── model/ # Trained model with weights
-├── src/ # Core Python scripts (training, preprocessing, etc.)
-|   ├── class_indices.json # This file, which is created when the codes in the train_models.ipynb file are used, is used during the model's prediction.
-|   ├── main.py # File containing the GUI and plant classification codes.
-|   ├── train_models.ipynb # Jupyter notebook for training and evaluation
-├── README.md # Project documentation
-└── requirements.txt # Required Python libraries
+├── data/                        # Original dataset downloaded from Kaggle
+│   ├── pdd.png                  # Used in GUI
+├── notebooks/                   # Jupyter notebooks for training and evaluation
+├── model/                       # Trained model with weights
+├── src/                         # Core Python scripts (training, preprocessing, etc.)
+│   ├── class_indices.json       # Created during training, used in model prediction
+│   ├── main.py                  # File containing the GUI and plant classification code
+│   ├── train_models.ipynb       # Jupyter notebook for training and evaluation
+├── README.md                    # Project documentation
+└── requirements.txt             # Required Python libraries
+```
 
 ## ⚙️ Installation
 
