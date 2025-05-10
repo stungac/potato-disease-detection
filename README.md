@@ -90,7 +90,7 @@ To run the project on your local machine:
 
 ## Sample Results
 
-![alt text](image.png)  ![alt text](image-1.png)
+![alt text](./data/image.png)  ![alt text](./data/image-1.png)
 
 ## Contribution
 

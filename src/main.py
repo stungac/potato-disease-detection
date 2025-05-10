@@ -24,7 +24,7 @@ def predict_image():
     preprocessed_img = preprocess_image()
     predictions = model.predict(preprocessed_img)
     display_prediction(predictions)
-    exeButton.config(text="Load A Plant Image", command=open_file)
+    exeButton.config(text="Load a Plant Image", command=open_file)
 
 def load_image(path):
     """Upload image for both model and Tkinter"""
@@ -38,7 +38,7 @@ def open_file():
     global img_label, img_display, result_label
     result_label.config(text="")
     file_path = filedialog.askopenfilename(
-        title="Load A Plant Image",
+        title="Load a Plant Image",
         filetypes=[("Image files", "*.jpg *.jpeg *.png")]
     )
     if file_path:
@@ -73,7 +73,7 @@ img_label.pack()
 # Buton
 exeButton = Button(
     root,
-    text="Load A Plant Image",
+    text="Load a Plant Image",
     command=open_file,
     width=20,
     height=2,
