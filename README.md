@@ -96,8 +96,4 @@ To run the project on your local machine:
 
 Contributions are welcome! If you find bugs or have suggestions, feel free to open an issue or submit a pull request.
 
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for details.
-
 ---
