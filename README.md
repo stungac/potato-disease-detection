@@ -1,1 +1,59 @@
-# potato-disease-detection
+# 🥔 Potato Disease Detection
+
+This project aims to detect diseases in potato leaves using deep learning-based image classification models. Early detection of plant diseases is critical for reducing crop loss and improving agricultural efficiency.
+
+## 📚 Dataset
+
+The dataset used in this project is the [Potato Disease Leaf Dataset (PLD)](https://www.kaggle.com/datasets/rizwan123456789/potato-disease-leaf-datasetpld), available on Kaggle.
+
+It includes images of potato leaves categorized into 3 classes:
+
+- **Early Blight**
+- **Late Blight**
+- **Healthy**
+
+The dataset contains high-resolution, labeled RGB images, which were used for training and testing the models.
+
+## 🧠 Deep Learning Models
+
+The following deep learning architectures were trained and evaluated:
+
+- **VGG16**
+- **LeNet**
+- **ResNet**
+- **GoogleNet**
+- **MobileNet**
+
+Pre-trained models (VGG16, ResNet, GoogleNet, and MobileNet) were used with transfer learning, where the top layers were replaced and fine-tuned on the potato disease dataset.
+
+## 📊 Results
+
+The following table shows the accuracy values for each model on each class.
+
+| Class          | VGG16 | LeNet | ResNet | GoogleNet | MobileNet |
+|----------------|-------|-------|--------|-----------|-----------|
+| Early Blight   | 0.86  |  0.85 |  0.98  |    0.97   |   0.93    |
+| Late Blight    | 0.86  |  0.78 |  0.97  |    0.94   |   0.91    |
+| Healthy        | 0.85  |  0.84 |  0.97  |    0.95   |   0.90    |
+
+> 🧪 **Note:** The values represent test set f1-score after model training and evaluation.
+
+|                      | VGG16 | LeNet | ResNet | GoogleNet | MobileNet |
+|----------------------|-------|-------|--------|-----------|-----------|
+| **Overall Accuracy** | 0.86  |  0.83 |  0.97  |   0.96    |   0.91    |
+
+> 🧪 **Note:** The values represent test set accuracy after model training and evaluation.
+
+## 🏗️ Project Structure
+potato-disease-detection/
+│
+├── data/ # Original dataset downloaded from Kaggle
+|   ├── pdd.png # Used in GUI
+├── notebooks/ # Jupyter notebooks for training and evaluation
+├── model/ # Trained model with weights
+├── src/ # Core Python scripts (training, preprocessing, etc.)
+|   ├── class_indices.json # This file, which is created when the codes in the train_models.ipynb file are used, is used during the model's prediction.
+|   ├── main.py # File containing the GUI and plant classification codes.
+|   ├── train_models.ipynb # Jupyter notebook for training and evaluation
+├── README.md # Project documentation
+└── requirements.txt # Required Python libraries
